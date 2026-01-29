@@ -7,8 +7,48 @@
   "item": [
     {
       "name": "Login user",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "3d36b81f-3ffc-4f5a-987a-a497846b24d9",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "35012037-0e2d-44ad-b55a-6b0ebfce5cd1",
+            "exec": [
+              "const response = pm.response.json();\r",
+              "\r",
+              "pm.environment.set(\"token\", response.token);\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
       "id": "57b0bea1-c848-4633-aded-b0f8e18eb367",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "POST",
         "header": [],
         "body": {
@@ -29,17 +69,11 @@
           ]
         },
         "url": {
-          "raw": "http://127.0.0.1:8004/api/login",
-          "protocol": "http",
+          "raw": "{{base_url}}/login",
           "host": [
-            "127",
-            "0",
-            "0",
-            "1"
+            "{{base_url}}"
           ],
-          "port": "8004",
           "path": [
-            "api",
             "login"
           ]
         }
@@ -55,7 +89,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "4|7HHKwtQluY6R12ZYsqsp1ZzhEDhVrRLXXO6l7IwY4d372d18",
+              "value": "{{token}}",
               "type": "string"
             }
           ]
@@ -80,17 +114,11 @@
           ]
         },
         "url": {
-          "raw": "http://127.0.0.1:8004/api/logout",
-          "protocol": "http",
+          "raw": "{{base_url}}/logout",
           "host": [
-            "127",
-            "0",
-            "0",
-            "1"
+            "{{base_url}}"
           ],
-          "port": "8004",
           "path": [
-            "api",
             "logout"
           ]
         }

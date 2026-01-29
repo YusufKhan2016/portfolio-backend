@@ -16,7 +16,7 @@ class AuthController extends Controller
             'password' => 'required|string'
         ]);
 
-        $user = User::where('username', $request->username) -> first();
+        $user = User::where('username', $request->username)->first();
 
         if(!$user || !Hash::check($request->password, $user->password)) {
             $message = 'Invalid Credentials';
@@ -34,7 +34,7 @@ class AuthController extends Controller
     }
 
     public function logout(Request $request) {
-        
+
         $request->user()->currentAccessToken()->delete();
 
         return response()->json([
