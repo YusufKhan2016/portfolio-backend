@@ -1,0 +1,101 @@
+{
+  "info": {
+    "_postman_id": "db9f0aab-d1ea-4f4a-ad8d-681e6c682d25",
+    "name": "Auth",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Login user",
+      "id": "57b0bea1-c848-4633-aded-b0f8e18eb367",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "username",
+              "value": "rafsun18",
+              "type": "text",
+              "uuid": "109de5b8-efce-4707-9c0f-18f8b5c2f585"
+            },
+            {
+              "key": "password",
+              "value": "password123",
+              "type": "text",
+              "uuid": "712f3a49-d768-4ca4-95c0-f84ca0090e3e"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8004/api/login",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8004",
+          "path": [
+            "api",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Logout user",
+      "id": "9238ddc4-3942-4bac-b091-d056ceda1a42",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "4|7HHKwtQluY6R12ZYsqsp1ZzhEDhVrRLXXO6l7IwY4d372d18",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "username",
+              "value": "Rafsun19",
+              "type": "text",
+              "uuid": "109de5b8-efce-4707-9c0f-18f8b5c2f585"
+            },
+            {
+              "key": "password",
+              "value": "0123456",
+              "type": "text",
+              "uuid": "712f3a49-d768-4ca4-95c0-f84ca0090e3e"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8004/api/logout",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8004",
+          "path": [
+            "api",
+            "logout"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
