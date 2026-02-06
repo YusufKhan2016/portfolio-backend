@@ -1,0 +1,278 @@
+{
+  "info": {
+    "_postman_id": "3de806e4-21ad-47d3-8d08-a8616633a070",
+    "name": "My Experience",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "get",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "3d36b81f-3ffc-4f5a-987a-a497846b24d9",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "35012037-0e2d-44ad-b55a-6b0ebfce5cd1",
+            "exec": [
+              "const response = pm.response.json();\r",
+              "\r",
+              "pm.environment.set(\"token\", response.token);\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "id": "9c2d04f2-7112-4d6c-88ad-c15f59489eed",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": []
+        },
+        "url": {
+          "raw": "{{base_url}}/experience",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "experience"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "store",
+      "id": "6b8716ae-4709-4adf-89df-4f31dc2d1af9",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text",
+            "uuid": "748afac7-597e-4d5e-9284-8eb4f1e9e535"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "job_title",
+              "value": " Jr. Software Developer",
+              "type": "text"
+            },
+            {
+              "key": "recruiter_name",
+              "value": " Datascape IT Limited",
+              "type": "text"
+            },
+            {
+              "key": "from_year",
+              "value": " 2025",
+              "type": "text"
+            },
+            {
+              "key": "to_year",
+              "value": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/experience",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "experience"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "show",
+      "id": "7c6a96a2-d992-4906-9563-31bd69f2f355",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "username",
+              "value": "Rafsun19",
+              "type": "text",
+              "uuid": "109de5b8-efce-4707-9c0f-18f8b5c2f585"
+            },
+            {
+              "key": "password",
+              "value": "0123456",
+              "type": "text",
+              "uuid": "712f3a49-d768-4ca4-95c0-f84ca0090e3e"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/experience/2",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "experience",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update",
+      "id": "8c3c2af8-ff49-4280-8a3d-3c8ff894b109",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "experience_id",
+              "value": "2",
+              "type": "text"
+            },
+            {
+              "key": "job_title",
+              "value": " Jr. Software Developer",
+              "type": "text"
+            },
+            {
+              "key": "recruiter_name",
+              "value": " Datascape IT Limited",
+              "type": "text"
+            },
+            {
+              "key": "from_year",
+              "value": " 2025",
+              "type": "text"
+            },
+            {
+              "key": "to_year",
+              "value": "2026",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/experience",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "experience"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "delete",
+      "id": "8e84a810-eaf8-4634-97c7-f06e61e335cf",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": []
+        },
+        "url": {
+          "raw": "{{base_url}}/experience/2",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "experience",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  }
+}
