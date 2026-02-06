@@ -53,21 +53,7 @@
         "header": [],
         "body": {
           "mode": "formdata",
-          "formdata": [
-            {
-              "key": "username",
-              "value": "rafsun18",
-              "type": "text",
-              "uuid": "109de5b8-efce-4707-9c0f-18f8b5c2f585",
-              "disabled": true
-            },
-            {
-              "key": "password",
-              "value": "password123",
-              "type": "text",
-              "uuid": "712f3a49-d768-4ca4-95c0-f84ca0090e3e"
-            }
-          ]
+          "formdata": []
         },
         "url": {
           "raw": "{{base_url}}/my-work",
@@ -109,7 +95,7 @@
           "formdata": [
             {
               "key": "title",
-              "value": "image 1",
+              "value": "work 1",
               "type": "text",
               "uuid": "109de5b8-efce-4707-9c0f-18f8b5c2f585"
             },
@@ -118,6 +104,7 @@
               "type": "file",
               "uuid": "712f3a49-d768-4ca4-95c0-f84ca0090e3e",
               "src": [
+                "/C:/Users/Rafsun/Downloads/WhatsApp Image 2026-01-30 at 9.41.50 PM.jpeg",
                 "/C:/Users/Rafsun/Downloads/WhatsApp Image 2026-01-30 at 9.41.50 PM.jpeg"
               ]
             }
@@ -169,12 +156,13 @@
           ]
         },
         "url": {
-          "raw": "{{base_url}}/logout",
+          "raw": "{{base_url}}/my-work/1",
           "host": [
             "{{base_url}}"
           ],
           "path": [
-            "logout"
+            "my-work",
+            "1"
           ]
         }
       },
@@ -194,32 +182,37 @@
             }
           ]
         },
-        "method": "PUT",
+        "method": "POST",
         "header": [],
         "body": {
           "mode": "formdata",
           "formdata": [
             {
-              "key": "username",
-              "value": "Rafsun19",
-              "type": "text",
-              "uuid": "109de5b8-efce-4707-9c0f-18f8b5c2f585"
+              "key": "work_Id",
+              "value": "1",
+              "type": "text"
             },
             {
-              "key": "password",
-              "value": "0123456",
-              "type": "text",
-              "uuid": "712f3a49-d768-4ca4-95c0-f84ca0090e3e"
+              "key": "title",
+              "value": "Rafsun",
+              "type": "text"
+            },
+            {
+              "key": "image",
+              "type": "file",
+              "src": [
+                "/C:/Users/Rafsun/Downloads/WhatsApp Image 2026-01-30 at 9.41.50 PM (1).jpeg"
+              ]
             }
           ]
         },
         "url": {
-          "raw": "{{base_url}}/logout",
+          "raw": "{{base_url}}/my-work",
           "host": [
             "{{base_url}}"
           ],
           "path": [
-            "logout"
+            "my-work"
           ]
         }
       },

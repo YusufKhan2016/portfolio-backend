@@ -40,17 +40,32 @@ class myWorkController extends Controller
                 $baseData['image'] = $this->imageUpload($request, 'image', 'uploads/myWork');
             }
 
-            $result = MyWork::create($baseData);
+            if(empty($request->work_id)) {
+                $result = MyWork::create($baseData);
+                $message = 'Sucessfully created';
+            }else {
+                $prev_data = MyWork::findOrFail($request->work_id);
+
+                if(file_exists(public_path(@$prev_data->image)) && @$prev_data->image !=null && $request->hasFile('image')) {
+                    unlink(public_path(@$prev_data->image));
+                }
+
+                $prev_data->update($baseData);
+
+                $result = $prev_data->fresh();
+                $message = 'Sucessfully saved';
+            }
+
 
             return response()->json([
                 'success' => true,
-                'message' => 'Successfully created',
+                'message' => $message,
                 'data' => $result
             ]);
 
         } catch (\Throwable $th) {
             return response()->json([
-                'success' => true,
+                'success' => false,
                 'message' => $th->getMessage()
             ], 422);
         }
@@ -61,17 +76,14 @@ class myWorkController extends Controller
      */
     public function show(string $id)
     {
-        //
-    }
+        $data = MyWork::findOrFail($id);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
+        return response()->json([
+            'success'=> true,
+            'data' => $data
+        ]);
     }
-
+    
     /**
      * Remove the specified resource from storage.
      */
