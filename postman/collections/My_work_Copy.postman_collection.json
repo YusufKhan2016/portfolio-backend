@@ -1,7 +1,7 @@
 {
   "info": {
-    "_postman_id": "e93b9911-8222-462e-b488-589164c4d29b",
-    "name": "My work",
+    "_postman_id": "bf285743-d2c8-475c-8db8-eebeef06ec0e",
+    "name": "Tech stack",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -37,7 +37,7 @@
           }
         }
       ],
-      "id": "2d0587cb-76ea-43e8-a56b-18435e662d0e",
+      "id": "4b1bf148-c3f9-4bf9-9215-3d3118c2bacd",
       "request": {
         "auth": {
           "type": "bearer",
@@ -56,12 +56,12 @@
           "formdata": []
         },
         "url": {
-          "raw": "{{base_url}}/my-work",
+          "raw": "{{base_url}}/tech-stack",
           "host": [
             "{{base_url}}"
           ],
           "path": [
-            "my-work"
+            "tech-stack"
           ]
         }
       },
@@ -69,7 +69,7 @@
     },
     {
       "name": "store",
-      "id": "a71444e4-15f5-4ace-9638-e6dd2f13bd6b",
+      "id": "2a853e42-b444-45ee-81e2-cb4c6e041986",
       "request": {
         "auth": {
           "type": "bearer",
@@ -95,7 +95,7 @@
           "formdata": [
             {
               "key": "title",
-              "value": "work 1",
+              "value": "Stack 4",
               "type": "text",
               "uuid": "109de5b8-efce-4707-9c0f-18f8b5c2f585"
             },
@@ -104,19 +104,18 @@
               "type": "file",
               "uuid": "712f3a49-d768-4ca4-95c0-f84ca0090e3e",
               "src": [
-                "/C:/Users/Rafsun/Downloads/WhatsApp Image 2026-01-30 at 9.41.50 PM.jpeg",
                 "/C:/Users/Rafsun/Downloads/WhatsApp Image 2026-01-30 at 9.41.50 PM.jpeg"
               ]
             }
           ]
         },
         "url": {
-          "raw": "{{base_url}}/my-work",
+          "raw": "{{base_url}}/tech-stack",
           "host": [
             "{{base_url}}"
           ],
           "path": [
-            "my-work"
+            "tech-stack"
           ]
         }
       },
@@ -124,7 +123,7 @@
     },
     {
       "name": "show",
-      "id": "abf30c82-efdc-4eed-91d0-336d58741125",
+      "id": "97766e37-fa9c-4e16-bf76-01a68e06d7cc",
       "request": {
         "auth": {
           "type": "bearer",
@@ -156,13 +155,13 @@
           ]
         },
         "url": {
-          "raw": "{{base_url}}/my-work/1",
+          "raw": "{{base_url}}/tech-stack/3",
           "host": [
             "{{base_url}}"
           ],
           "path": [
-            "my-work",
-            "1"
+            "tech-stack",
+            "3"
           ]
         }
       },
@@ -170,7 +169,7 @@
     },
     {
       "name": "update",
-      "id": "5f53ba6d-e5c2-4505-907c-a1e4e38a25ef",
+      "id": "cbbfffc8-297e-4c23-8b54-47e2d646539e",
       "request": {
         "auth": {
           "type": "bearer",
@@ -188,31 +187,31 @@
           "mode": "formdata",
           "formdata": [
             {
-              "key": "work_Id",
+              "key": "tech_stack_id",
               "value": "1",
               "type": "text"
             },
             {
               "key": "title",
-              "value": "Rafsun",
+              "value": "Updating test",
               "type": "text"
             },
             {
               "key": "image",
               "type": "file",
               "src": [
-                "/C:/Users/Rafsun/Downloads/WhatsApp Image 2026-01-30 at 9.41.50 PM (1).jpeg"
+                "/C:/Users/Rafsun/Downloads/WhatsApp Image 2026-01-30 at 9.41.50 PM.jpeg"
               ]
             }
           ]
         },
         "url": {
-          "raw": "{{base_url}}/my-work",
+          "raw": "{{base_url}}/tech-stack",
           "host": [
             "{{base_url}}"
           ],
           "path": [
-            "my-work"
+            "tech-stack"
           ]
         }
       },
@@ -220,7 +219,7 @@
     },
     {
       "name": "delete",
-      "id": "b11ae11e-4a28-4295-aa6d-35022dcd0c58",
+      "id": "52371891-b355-4369-bb0f-810caa54b470",
       "request": {
         "auth": {
           "type": "bearer",
@@ -236,28 +235,16 @@
         "header": [],
         "body": {
           "mode": "formdata",
-          "formdata": [
-            {
-              "key": "username",
-              "value": "Rafsun19",
-              "type": "text",
-              "uuid": "109de5b8-efce-4707-9c0f-18f8b5c2f585"
-            },
-            {
-              "key": "password",
-              "value": "0123456",
-              "type": "text",
-              "uuid": "712f3a49-d768-4ca4-95c0-f84ca0090e3e"
-            }
-          ]
+          "formdata": []
         },
         "url": {
-          "raw": "{{base_url}}/logout",
+          "raw": "{{base_url}}/tech-stack/3",
           "host": [
             "{{base_url}}"
           ],
           "path": [
-            "logout"
+            "tech-stack",
+            "3"
           ]
         }
       },

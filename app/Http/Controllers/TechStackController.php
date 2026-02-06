@@ -2,17 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MyWork;
+use App\Models\TechStack;
 use Illuminate\Http\Request;
 
-class MyWorkController extends Controller
+class TechStackController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        $data = MyWork::all();
+        $data = TechStack::all();
 
         return response()->json([
             'success' => true,
@@ -37,14 +35,14 @@ class MyWorkController extends Controller
             ];
 
             if($request->hasFile('image')) {
-                $baseData['image'] = $this->imageUpload($request, 'image', 'uploads/myWork');
+                $baseData['image'] = $this->imageUpload($request, 'image', 'uploads/techStacks');
             }
 
-            if(empty($request->work_id)) {
-                $result = MyWork::create($baseData);
+            if(empty($request->tech_stack_id)) {
+                $result = TechStack::create($baseData);
                 $message = 'Sucessfully created';
             }else {
-                $prev_data = MyWork::findOrFail($request->work_id);
+                $prev_data = TechStack::findOrFail($request->tech_stack_id);
 
                 if(file_exists(public_path(@$prev_data->image)) && @$prev_data->image !=null && $request->hasFile('image')) {
                     unlink(public_path(@$prev_data->image));
@@ -76,7 +74,7 @@ class MyWorkController extends Controller
      */
     public function show(string $id)
     {
-        $data = MyWork::findOrFail($id);
+        $data = TechStack::findOrFail($id);
 
         return response()->json([
             'success'=> true,
@@ -91,7 +89,7 @@ class MyWorkController extends Controller
     {
         try {
 
-            $data = MyWork::findOrFail($id);
+            $data = TechStack::findOrFail($id);
 
             if($data->image && file_exists(public_path($data->image))) {
                 unlink(public_path($data->image));
