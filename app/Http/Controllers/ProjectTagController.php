@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MyWork;
+use App\Models\ProjectTag;
 use Illuminate\Http\Request;
 
-class MyWorkController extends Controller
+class ProjectTagController extends Controller
 {
-    /**
+        /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data = MyWork::all();
+        $data = ProjectTag::all();
 
         return response()->json([
             'success' => true,
@@ -28,27 +28,18 @@ class MyWorkController extends Controller
         try {
 
             $request->validate([
-                'title'=>'required|string',
-                'image'=>'required|image|mimes:jpg,jpeg,png,webp|max:1048',
+                'tag_name'=>'required|string',
             ]);
 
             $baseData = [
-                'title' => $request->title
+                'tag_name' => $request->tag_name,
             ];
 
-            if($request->hasFile('image')) {
-                $baseData['image'] = $this->imageUpload($request, 'image', 'uploads/myWork');
-            }
-
-            if(empty($request->work_id)) {
-                $result = MyWork::create($baseData);
+            if(empty($request->tag_id)) {
+                $result = ProjectTag::create($baseData);
                 $message = 'Sucessfully created';
             }else {
-                $prev_data = MyWork::findOrFail($request->work_id);
-
-                if(file_exists(public_path(@$prev_data->image)) && @$prev_data->image !=null && $request->hasFile('image')) {
-                    unlink(public_path(@$prev_data->image));
-                }
+                $prev_data = ProjectTag::findOrFail($request->tag_id);
 
                 $prev_data->update($baseData);
 
@@ -76,9 +67,8 @@ class MyWorkController extends Controller
      */
     public function show(string $id)
     {
-
         try {
-            $data = MyWork::findOrFail($id);
+            $data = ProjectTag::findOrFail($id);
 
             return response()->json([
                 'success'=> true,
@@ -100,11 +90,7 @@ class MyWorkController extends Controller
     {
         try {
 
-            $data = MyWork::findOrFail($id);
-
-            if($data->image && file_exists(public_path($data->image))) {
-                unlink(public_path($data->image));
-            }
+            $data = ProjectTag::findOrFail($id);
 
             $data->delete();
 

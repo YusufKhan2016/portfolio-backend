@@ -22,13 +22,13 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{root_url}}uploads/myWork/WhatsApp Image 2026-01-30 at 9.41.50 PM_6984e414309b6 .jpeg",
+          "raw": "{{root_url}}uploads/featuredWork/Package500_6988b9cf19fe1 .jpeg",
           "host": [
             "{{root_url}}uploads"
           ],
           "path": [
-            "myWork",
-            "WhatsApp Image 2026-01-30 at 9.41.50 PM_6984e414309b6 .jpeg"
+            "featuredWork",
+            "Package500_6988b9cf19fe1 .jpeg"
           ]
         }
       },

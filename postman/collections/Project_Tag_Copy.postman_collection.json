@@ -1,7 +1,7 @@
 {
   "info": {
-    "_postman_id": "bf285743-d2c8-475c-8db8-eebeef06ec0e",
-    "name": "Tech stack",
+    "_postman_id": "02a11930-630d-4ef3-adce-c79377b5ad18",
+    "name": "Featured work",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -37,7 +37,7 @@
           }
         }
       ],
-      "id": "4b1bf148-c3f9-4bf9-9215-3d3118c2bacd",
+      "id": "7a264eea-3e45-4b83-bd61-9ee0f8ac94f0",
       "request": {
         "auth": {
           "type": "bearer",
@@ -56,12 +56,12 @@
           "formdata": []
         },
         "url": {
-          "raw": "{{base_url}}/tech-stack",
+          "raw": "{{base_url}}/featured-work",
           "host": [
             "{{base_url}}"
           ],
           "path": [
-            "tech-stack"
+            "featured-work"
           ]
         }
       },
@@ -69,7 +69,7 @@
     },
     {
       "name": "store",
-      "id": "2a853e42-b444-45ee-81e2-cb4c6e041986",
+      "id": "06c3bd0c-eb4b-4e5c-93db-9d17effcb629",
       "request": {
         "auth": {
           "type": "bearer",
@@ -95,27 +95,52 @@
           "formdata": [
             {
               "key": "title",
-              "value": "Stack 4",
+              "value": " featured 2",
+              "type": "text"
+            },
+            {
+              "key": "link",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "tag_ids[]",
+              "value": "2",
               "type": "text",
-              "uuid": "109de5b8-efce-4707-9c0f-18f8b5c2f585"
+              "uuid": "c10bbf23-f40d-45dd-a47c-dd5401c3cda3"
+            },
+            {
+              "key": "about_work",
+              "value": "asfsdfsd",
+              "type": "text"
+            },
+            {
+              "key": "tech_stack_ids[]",
+              "value": "1",
+              "type": "text"
             },
             {
               "key": "image",
               "type": "file",
-              "uuid": "712f3a49-d768-4ca4-95c0-f84ca0090e3e",
               "src": [
-                "/C:/Users/Rafsun/Downloads/it-deparment-head.jpeg"
+                "/C:/Users/Rafsun/Downloads/Package500.jpeg"
               ]
+            },
+            {
+              "key": "tag_ids[]",
+              "value": "1",
+              "type": "text",
+              "uuid": "8472f06c-ff88-40f0-90bd-46dc1f1ca8ab"
             }
           ]
         },
         "url": {
-          "raw": "{{base_url}}/tech-stack",
+          "raw": "{{base_url}}/featured-work",
           "host": [
             "{{base_url}}"
           ],
           "path": [
-            "tech-stack"
+            "featured-work"
           ]
         }
       },
@@ -123,7 +148,7 @@
     },
     {
       "name": "show",
-      "id": "97766e37-fa9c-4e16-bf76-01a68e06d7cc",
+      "id": "7c2395a6-df94-4882-a653-92312dde69b2",
       "request": {
         "auth": {
           "type": "bearer",
@@ -155,12 +180,12 @@
           ]
         },
         "url": {
-          "raw": "{{base_url}}/tech-stack/3",
+          "raw": "{{base_url}}/featured-work/3",
           "host": [
             "{{base_url}}"
           ],
           "path": [
-            "tech-stack",
+            "featured-work",
             "3"
           ]
         }
@@ -169,7 +194,7 @@
     },
     {
       "name": "update",
-      "id": "cbbfffc8-297e-4c23-8b54-47e2d646539e",
+      "id": "a6d54d0d-5517-4e96-86b6-546b890e0b64",
       "request": {
         "auth": {
           "type": "bearer",
@@ -187,31 +212,62 @@
           "mode": "formdata",
           "formdata": [
             {
-              "key": "tech_stack_id",
+              "key": "featured_work_id",
               "value": "1",
               "type": "text"
             },
             {
               "key": "title",
-              "value": "Updating test",
+              "value": " featured 1",
+              "type": "text"
+            },
+            {
+              "key": "link",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "tag_ids[]",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "tag_ids[]",
+              "value": "2",
+              "type": "text"
+            },
+            {
+              "key": "about_work",
+              "value": "asfsdfsd",
+              "type": "text"
+            },
+            {
+              "key": "tech_stack_ids[]",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "tech_stack_ids[]",
+              "value": "2",
               "type": "text"
             },
             {
               "key": "image",
               "type": "file",
+              "uuid": "5debd767-5849-4c67-91df-bc8a611ecaad",
               "src": [
-                "/C:/Users/Rafsun/Downloads/WhatsApp Image 2026-01-30 at 9.41.50 PM.jpeg"
+                "/C:/Users/Rafsun/Downloads/Package1000.jpeg"
               ]
             }
           ]
         },
         "url": {
-          "raw": "{{base_url}}/tech-stack",
+          "raw": "{{base_url}}/featured-work",
           "host": [
             "{{base_url}}"
           ],
           "path": [
-            "tech-stack"
+            "featured-work"
           ]
         }
       },
@@ -219,7 +275,7 @@
     },
     {
       "name": "delete",
-      "id": "52371891-b355-4369-bb0f-810caa54b470",
+      "id": "4318230b-a94c-412f-9ae6-e3cb1da6cfe8",
       "request": {
         "auth": {
           "type": "bearer",
@@ -238,13 +294,13 @@
           "formdata": []
         },
         "url": {
-          "raw": "{{base_url}}/tech-stack/7",
+          "raw": "{{base_url}}/featured-work/3",
           "host": [
             "{{base_url}}"
           ],
           "path": [
-            "tech-stack",
-            "7"
+            "featured-work",
+            "3"
           ]
         }
       },

@@ -1,7 +1,7 @@
 {
   "info": {
-    "_postman_id": "bf285743-d2c8-475c-8db8-eebeef06ec0e",
-    "name": "Tech stack",
+    "_postman_id": "84f00726-7bcb-4db7-bd32-32f155548d00",
+    "name": "Project Tag",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -37,7 +37,7 @@
           }
         }
       ],
-      "id": "4b1bf148-c3f9-4bf9-9215-3d3118c2bacd",
+      "id": "8dbd0db8-c402-454d-9db6-82b428280f1e",
       "request": {
         "auth": {
           "type": "bearer",
@@ -56,12 +56,12 @@
           "formdata": []
         },
         "url": {
-          "raw": "{{base_url}}/tech-stack",
+          "raw": "{{base_url}}/project-tag",
           "host": [
             "{{base_url}}"
           ],
           "path": [
-            "tech-stack"
+            "project-tag"
           ]
         }
       },
@@ -69,7 +69,7 @@
     },
     {
       "name": "store",
-      "id": "2a853e42-b444-45ee-81e2-cb4c6e041986",
+      "id": "01fef125-5e48-40fd-a866-bf28e67a723a",
       "request": {
         "auth": {
           "type": "bearer",
@@ -94,28 +94,19 @@
           "mode": "formdata",
           "formdata": [
             {
-              "key": "title",
-              "value": "Stack 4",
-              "type": "text",
-              "uuid": "109de5b8-efce-4707-9c0f-18f8b5c2f585"
-            },
-            {
-              "key": "image",
-              "type": "file",
-              "uuid": "712f3a49-d768-4ca4-95c0-f84ca0090e3e",
-              "src": [
-                "/C:/Users/Rafsun/Downloads/it-deparment-head.jpeg"
-              ]
+              "key": "tag_name",
+              "value": "tag 2",
+              "type": "text"
             }
           ]
         },
         "url": {
-          "raw": "{{base_url}}/tech-stack",
+          "raw": "{{base_url}}/project-tag",
           "host": [
             "{{base_url}}"
           ],
           "path": [
-            "tech-stack"
+            "project-tag"
           ]
         }
       },
@@ -123,7 +114,7 @@
     },
     {
       "name": "show",
-      "id": "97766e37-fa9c-4e16-bf76-01a68e06d7cc",
+      "id": "9b7ebc69-399a-4e41-a411-2805fb7675fa",
       "request": {
         "auth": {
           "type": "bearer",
@@ -155,13 +146,13 @@
           ]
         },
         "url": {
-          "raw": "{{base_url}}/tech-stack/3",
+          "raw": "{{base_url}}/project-tag/2",
           "host": [
             "{{base_url}}"
           ],
           "path": [
-            "tech-stack",
-            "3"
+            "project-tag",
+            "2"
           ]
         }
       },
@@ -169,7 +160,7 @@
     },
     {
       "name": "update",
-      "id": "cbbfffc8-297e-4c23-8b54-47e2d646539e",
+      "id": "958e371b-8bee-4ae4-b664-f5cee791d775",
       "request": {
         "auth": {
           "type": "bearer",
@@ -187,31 +178,24 @@
           "mode": "formdata",
           "formdata": [
             {
-              "key": "tech_stack_id",
+              "key": "tag_id",
               "value": "1",
               "type": "text"
             },
             {
-              "key": "title",
-              "value": "Updating test",
+              "key": "tag_name",
+              "value": "tag 2",
               "type": "text"
-            },
-            {
-              "key": "image",
-              "type": "file",
-              "src": [
-                "/C:/Users/Rafsun/Downloads/WhatsApp Image 2026-01-30 at 9.41.50 PM.jpeg"
-              ]
             }
           ]
         },
         "url": {
-          "raw": "{{base_url}}/tech-stack",
+          "raw": "{{base_url}}/project-tag",
           "host": [
             "{{base_url}}"
           ],
           "path": [
-            "tech-stack"
+            "project-tag"
           ]
         }
       },
@@ -219,7 +203,7 @@
     },
     {
       "name": "delete",
-      "id": "52371891-b355-4369-bb0f-810caa54b470",
+      "id": "38978e98-48f4-446a-bb75-54d507e9635f",
       "request": {
         "auth": {
           "type": "bearer",
@@ -238,13 +222,13 @@
           "formdata": []
         },
         "url": {
-          "raw": "{{base_url}}/tech-stack/7",
+          "raw": "{{base_url}}/project-tag/1",
           "host": [
             "{{base_url}}"
           ],
           "path": [
-            "tech-stack",
-            "7"
+            "project-tag",
+            "1"
           ]
         }
       },

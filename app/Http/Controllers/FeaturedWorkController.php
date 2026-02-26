@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MyWork;
+use App\Models\FeaturedWork;
 use Illuminate\Http\Request;
 
-class MyWorkController extends Controller
+class FeaturedWorkController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data = MyWork::all();
+        $data = FeaturedWork::all();
 
         return response()->json([
             'success' => true,
@@ -30,21 +30,32 @@ class MyWorkController extends Controller
             $request->validate([
                 'title'=>'required|string',
                 'image'=>'required|image|mimes:jpg,jpeg,png,webp|max:1048',
+                'link' => 'nullable|string',
+                'tag_ids' => 'nullable|array',
+                'tag_ids.*' => 'nullable|integer|exists:project_tags,id',
+                'about_work' => 'required|string',
+                'tech_stack_ids' => 'nullable|array',
+                'tech_stack_ids.*' => 'nullable|integer|exists:tech_stacks,id'
             ]);
 
             $baseData = [
-                'title' => $request->title
+                'title' => $request->title,
+                'link' => $request->link,
+                'tag_ids' => $request->tag_ids,
+                'about_work' => $request->about_work,
+                'tech_stack_ids' => $request->tech_stack_ids
             ];
 
             if($request->hasFile('image')) {
-                $baseData['image'] = $this->imageUpload($request, 'image', 'uploads/myWork');
+                $baseData['image'] = $this->imageUpload($request, 'image', 'uploads/featuredWork');
             }
 
-            if(empty($request->work_id)) {
-                $result = MyWork::create($baseData);
+            if(empty($request->featured_work_id)) {
+                $result = FeaturedWork::create($baseData);
                 $message = 'Sucessfully created';
+
             }else {
-                $prev_data = MyWork::findOrFail($request->work_id);
+                $prev_data = FeaturedWork::findOrFail($request->featured_work_id);
 
                 if(file_exists(public_path(@$prev_data->image)) && @$prev_data->image !=null && $request->hasFile('image')) {
                     unlink(public_path(@$prev_data->image));
@@ -78,7 +89,7 @@ class MyWorkController extends Controller
     {
 
         try {
-            $data = MyWork::findOrFail($id);
+            $data = FeaturedWork::findOrFail($id);
 
             return response()->json([
                 'success'=> true,
@@ -100,7 +111,7 @@ class MyWorkController extends Controller
     {
         try {
 
-            $data = MyWork::findOrFail($id);
+            $data = FeaturedWork::findOrFail($id);
 
             if($data->image && file_exists(public_path($data->image))) {
                 unlink(public_path($data->image));

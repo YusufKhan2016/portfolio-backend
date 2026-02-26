@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FeaturedWorkController;
 use App\Http\Controllers\MyExperienceController;
 use App\Http\Controllers\MyWorkController;
+use App\Http\Controllers\ProjectTagController;
 use App\Http\Controllers\TechStackController;
 
 use Illuminate\Support\Facades\Route;
@@ -24,6 +26,14 @@ Route::middleware('auth:sanctum')->group(function(){
     //My Experiences
     Route::post('/experience', [MyExperienceController::class, 'store']);
     Route::delete('/experience/{id}', [MyExperienceController::class, 'destroy']);
+
+    //Project Tag
+    Route::post('/project-tag', [ProjectTagController::class, 'store']);
+    Route::delete('/project-tag/{id}', [ProjectTagController::class, 'destroy']);
+
+    //Featured Work
+    Route::post('/featured-work', [FeaturedWorkController::class, 'store']);
+    Route::delete('/featured-work/{id}', [FeaturedWorkController::class, 'destroy']);
 });
 
 //My work
@@ -38,4 +48,11 @@ Route::get('/tech-stack/{id}', [TechStackController::class, 'show']);
 Route::get('/experience', [MyExperienceController::class, 'index']);
 Route::get('/experience/{id}', [MyExperienceController::class, 'show']);
 
+//Project Tag
+Route::get('/project-tag', [ProjectTagController::class, 'index']);
+Route::get('/project-tag/{id}', [ProjectTagController::class, 'show']);
+
+//Featured work
+Route::get('/featured-work', [FeaturedWorkController::class, 'index']);
+Route::get('/featured-work/{id}', [FeaturedWorkController::class, 'show']);
 

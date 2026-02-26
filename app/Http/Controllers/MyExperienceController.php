@@ -73,12 +73,21 @@ class MyExperienceController extends Controller
      */
     public function show(string $id)
     {
-        $data = MyExperience::findOrFail($id);
 
-        return response()->json([
-            'success'=> true,
-            'data' => $data
-        ]);
+        try {
+            $data = MyExperience::findOrFail($id);
+
+            return response()->json([
+                'success'=> true,
+                'data' => $data
+            ]);
+        } catch (\Throwable $th) {
+
+            return response()->json([
+                'success' => false,
+                'message' => $th->getMessage()
+            ]);
+        }
     }
 
     /**
