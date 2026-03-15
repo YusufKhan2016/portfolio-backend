@@ -1,0 +1,26 @@
+$kind: http-request
+url: "{{base_url}}/experience"
+method: POST
+body:
+  type: formdata
+  content:
+    - type: text
+      key: experience_id
+      value: "2"
+    - type: text
+      key: job_title
+      value: " Jr. Software Developer"
+    - type: text
+      key: recruiter_name
+      value: " Datascape IT Limited"
+    - type: text
+      key: from_year
+      value: " 2025"
+    - type: text
+      key: to_year
+      value: "2026"
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 4000

@@ -1,0 +1,11 @@
+name: Local
+values:
+  - key: token
+    value: ''
+    enabled: true
+  - key: base_url
+    value: ''
+    enabled: true
+  - key: root_url
+    value: ''
+    enabled: true

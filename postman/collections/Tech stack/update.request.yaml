@@ -1,0 +1,21 @@
+$kind: http-request
+url: "{{base_url}}/tech-stack"
+method: POST
+body:
+  type: formdata
+  content:
+    - type: text
+      key: tech_stack_id
+      value: "1"
+    - type: text
+      key: title
+      value: Updating test
+    - type: file
+      key: image
+      src:
+        - /C:/Users/Rafsun/Downloads/WhatsApp Image 2026-01-30 at 9.41.50 PM.jpeg
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 4000

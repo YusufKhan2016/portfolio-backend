@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{base_url}}/tech-stack/7"
+method: DELETE
+body:
+  type: formdata
+  content: []
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 5000

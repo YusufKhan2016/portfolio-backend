@@ -29,7 +29,7 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
-    ];
+    ];  
 
     /**
      * Get the attributes that should be cast.

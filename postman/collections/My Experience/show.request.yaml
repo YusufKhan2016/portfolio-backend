@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{base_url}}/experience/2"
+method: GET
+body:
+  type: formdata
+  content:
+    - type: text
+      key: username
+      value: Rafsun19
+    - type: text
+      key: password
+      value: "0123456"
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 3000

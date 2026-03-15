@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{root_url}}uploads/featuredWork/Package500_6988b9cf19fe1 .jpeg"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 1000

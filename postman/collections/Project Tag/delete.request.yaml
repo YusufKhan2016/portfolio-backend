@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{base_url}}/project-tag/5"
+method: DELETE
+body:
+  type: formdata
+  content: []
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 5000

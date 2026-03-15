@@ -1,0 +1,39 @@
+$kind: http-request
+url: "{{base_url}}/featured-work"
+method: POST
+body:
+  type: formdata
+  content:
+    - type: text
+      key: featured_work_id
+      value: "1"
+    - type: text
+      key: title
+      value: " featured 1"
+    - type: text
+      key: link
+      value: ""
+    - type: text
+      key: tag_ids[]
+      value: "1"
+    - type: text
+      key: tag_ids[]
+      value: "2"
+    - type: text
+      key: about_work
+      value: asfsdfsd
+    - type: text
+      key: tech_stack_ids[]
+      value: "1"
+    - type: text
+      key: tech_stack_ids[]
+      value: "2"
+    - type: file
+      key: image
+      src:
+        - /C:/Users/Rafsun/Downloads/Package1000.jpeg
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 4000

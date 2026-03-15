@@ -1,0 +1,31 @@
+$kind: http-request
+url: "{{base_url}}/login"
+method: POST
+body:
+  type: formdata
+  content:
+    - type: text
+      key: username
+      value: rafsun18
+    - type: text
+      key: password
+      value: password123
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+scripts:
+  - type: afterResponse
+    code: "const response = pm.response.json();\r
+
+      \r
+
+      if (response.token) {\r
+
+      \    pm.environment.set(\"token\", response['token']);\r
+
+      \    console.log(\"New token stored:\", response['token']);\r
+
+      }\r\n"
+    language: text/javascript
+order: 1000

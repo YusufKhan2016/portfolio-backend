@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{base_url}}/project-tag"
+method: POST
+body:
+  type: formdata
+  content:
+    - type: text
+      key: tag_id
+      value: "1"
+    - type: text
+      key: tag_name
+      value: tag 2
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 4000

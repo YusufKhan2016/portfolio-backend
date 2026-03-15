@@ -1,0 +1,7 @@
+name: Globals
+values:
+  - key: token
+    value: ''
+    enabled: true
+    type: default
+    description: ''
