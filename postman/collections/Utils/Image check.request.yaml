@@ -1,5 +1,6 @@
 $kind: http-request
-url: "{{root_url}}uploads/featuredWork/Package500_6988b9cf19fe1 .jpeg"
+name: Image check
+url: "{{root_url}}uploads/user/user.jpg"
 method: GET
 auth:
   type: bearer
